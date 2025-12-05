@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_label }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: {{ font_family }};
+            font-size: {{ font_size }};
+            padding: 10px;
+        }
+        
+        .page-header {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #333;
+        }
+        
+        .page-header h1 {
+            font-size: 14pt;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .page-header .meta {
+            font-size: 9pt;
+            color: #666;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: auto;
+        }
+        
+        th {
+            background-color: {{ header_bg_color }};
+            color: {{ header_text_color }};
+            font-weight: bold;
+            text-align: left;
+            padding: {{ cell_padding }};
+            border: {{ table_border }};
+            white-space: nowrap;
+        }
+        
+        td {
+            padding: {{ cell_padding }};
+            border: {{ table_border }};
+            text-align: left;
+            word-wrap: break-word;
+        }
+        
+        {% if stripe_rows %}
+        tr:nth-child(even) {
+            background-color: {{ stripe_color }};
+        }
+        {% endif %}
+        
+        tr:hover {
+            background-color: #e8f4f8;
+        }
+        
+        /* Ensure text is selectable and not rasterized */
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Page break handling */
+        @media print {
+            table {
+                page-break-inside: auto;
+            }
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+            thead {
+                display: table-header-group;
+            }
+            tfoot {
+                display: table-footer-group;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-header">
+        <h1>{{ page_label }}</h1>
+        <div class="meta">
+            Page {{ page_num }} | Columns {{ start_col }} to {{ end_col }}
+        </div>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                {% for header in headers %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                {% for cell in row %}
+                <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,41 @@
+# Configuration file for Excel to PDF conversion
+
+# PDF Layout Settings
+pdf:
+  page_size: "A4"
+  orientation: "landscape"  # landscape or portrait
+  margin_top: "15mm"
+  margin_right: "10mm"
+  margin_bottom: "15mm"
+  margin_left: "10mm"
+  font_size: "10pt"
+  font_family: "Arial, sans-serif"
+
+# Column Slicing Settings
+slicing:
+  max_columns_per_page: 12  # Maximum number of columns per page
+  repeat_header: true       # Repeat header rows on each page
+  header_rows: 1            # Number of header rows to repeat
+
+# Output Settings
+output:
+  output_dir: "output"
+  temp_dir: "temp"
+  combine_pdfs: true        # Combine all pages into single PDF
+  keep_individual_pages: true  # Keep individual page PDFs
+  page_label_format: "Page {page_num} – Columns {start_col}-{end_col}"
+
+# Logging Settings
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/conversion.log"
+
+# HTML Rendering Settings
+html:
+  table_border: "1px solid #333"
+  header_bg_color: "#4CAF50"
+  header_text_color: "#ffffff"
+  cell_padding: "8px"
+  stripe_rows: true
+  stripe_color: "#f2f2f2"

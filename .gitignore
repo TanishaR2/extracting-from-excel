@@ -1,0 +1,166 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Output files (large generated markdown/PDF files)
+output/markdown_*/
+output/pdf_*/
+output/*.xlsx
+output/*.pdf
+output/*.html
+
+# Keep documentation in output folder
+!output/EXTRACTION_README.md
+!output/QUICK_START_GUIDE.md
+!output/.gitkeep
+
+# Virtual environments
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# UV
+.uv/
+uv.lock
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Project specific
+output/*/page_*.md
+output/*/combined_output.md
+output/*/page_*.pdf
+output/*/combined_output.pdf
+temp/
+logs/
+*.log
+
+# Keep example output structure but not the files
+!output/.gitkeep
+!output/EXTRACTION_README.md
+!output/QUICK_START_GUIDE.md
+
+# Sample/test files (except example ones)
+sample*.xlsx
+test*.xlsx
+!examples/*.xlsx
+
+# OS specific
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Large data files
+*.zip
+*.tar.gz
+*.rar
+
+# Sensitive data
+*.xlsx
+*.xls
+!examples/*.xlsx
+!examples/*.xls
+
+# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Documentation build
+docs/_build/
+docs/.doctrees/
+site/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# pytype
+.pytype/
+
+# Cython
+cython_debug/
